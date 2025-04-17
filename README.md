@@ -21,7 +21,7 @@
 
 ## ✨ Features
 
-<img align="right" width="350" src="https://i.imgur.com/YgIa2rU.png" alt="Portfolio Screenshot" />
+<img align="right" width="350" src="./images/preview.png" alt="Portfolio Screenshot" />
 
 - **📱 Responsive Design** - Looks great on all devices
 - **👤 About Section** - Personal bio and introduction
