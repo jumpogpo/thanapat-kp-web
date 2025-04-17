@@ -12,7 +12,7 @@ const jetBrainsMono = Space_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_APP_URL || "https://thanapat-kp.com"
+    process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000"
   ),
   title: {
     default: "Thanapat Koedpiam | Personal Portfolio",

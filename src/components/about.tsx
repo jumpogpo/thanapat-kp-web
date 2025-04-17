@@ -32,7 +32,9 @@ export default async function About({ data }: { data: AboutData }) {
 
         <div className="flex flex-col items-center justify-center">
           <h1 className="text-xl font-semibold">{data.name}</h1>
-          <h2 className="text-base text-theme-secondary text-center">{data.title}</h2>
+          <h2 className="text-base text-theme-secondary text-center">
+            {data.title}
+          </h2>
         </div>
       </div>
 
