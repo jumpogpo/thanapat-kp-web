@@ -50,7 +50,7 @@ export const worksData: WorksType[] = [
   {
     title: "Bank Manager API",
     description:
-      "A RESTful API system for managing banking operations including account management, transactions, and user authentication. Provides secure endpoints for financial operations with comprehensive documentation. The system can also generate transaction receipt images for verification purposes.",
+      "A RESTful API system for managing banking operations, including account management and transactions. The system features comprehensive documentation and supports generating transaction receipt images for verification purposes.",
     image: "/works/bank-manager.png",
     tags: ["FastAPI", "MongoDB", "Swagger", "Docker"],
     link: "https://github.com/jumpogpo/bank-manager-api",
