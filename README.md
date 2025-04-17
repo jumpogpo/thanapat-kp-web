@@ -72,7 +72,7 @@
 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/thanapat-kp-web.git
+git clone https://github.com/jumpogpo/thanapat-kp-web.git
 cd thanapat-kp-web
 ```
 
