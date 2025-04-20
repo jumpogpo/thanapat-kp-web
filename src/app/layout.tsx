@@ -15,11 +15,11 @@ export const metadata: Metadata = {
     process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000"
   ),
   title: {
-    default: "Thanapat Koedpiam | Personal Portfolio",
+    default: "Thanapat Koedpiam - Personal Portfolio",
     template: "%s - Thanapat Koedpiam",
   },
   description:
-    "Personal portfolio website showcasing the projects and skills of Thanapat Koedpiam, a passionate software developer specializing in web and mobile application development.",
+    "Personal portfolio website showcasing the projects and skills of Thanapat Koedpiam, a passionate software developer specializing in web and game development.",
   keywords: [
     "portfolio",
     "developer",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Thanapat Koedpiam" }],
   creator: "Thanapat Koedpiam",
   icons: {
-    icon: "./icon.png",
+    icon: "./icon.ico",
   },
   openGraph: {
     type: "website",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     siteName: "Thanapat Koedpiam Portfolio",
     images: [
       {
-        url: "./icon.png",
+        url: "./icon.ico",
         width: 1200,
         height: 630,
         alt: "Thanapat Koedpiam Portfolio",
