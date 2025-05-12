@@ -9,6 +9,16 @@ export type ExperienceItem = {
 
 export const experienceData: ExperienceItem[] = [
   {
+    title: "TLI Transform Learning Intern",
+    company: "Thai Life Insurance",
+    period: "2025 - Present",
+    link: "https://www.thailife.com/",
+    bullets: [
+      "Member of BPC team responsible for E-Payment service development and implementation",
+    ],
+    tags: ["Java"],
+  },
+  {
     title: "Backend Developer & API Developer",
     company: "JOODPAKJAI on Roblox",
     period: "2020 - 2024",
