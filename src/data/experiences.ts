@@ -14,7 +14,7 @@ export const experienceData: ExperienceItem[] = [
     period: "2025 - Present",
     link: "https://www.thailife.com/",
     bullets: [
-      "Member of Billing Collection and Payment (BCP) team responsible for E-Payment service development and implementation",
+      "Member of Billing Collection and Payment (BCP) team",
     ],
     tags: ["Java"],
   },
