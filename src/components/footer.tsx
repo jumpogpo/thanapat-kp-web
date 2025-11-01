@@ -27,7 +27,7 @@ export default function Footer() {
           aria-label="Copy email to clipboard"
         >
           <MdOutlineMailOutline size={20} />
-          <span className="font-semibold">{"chokhun191@gmail.com"}</span>
+          <span className="font-semibold">{email}</span>
           {copied ? <FaCheck /> : <FaRegCopy />}
 
           {/* Tooltip */}
