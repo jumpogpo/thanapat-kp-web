@@ -6,7 +6,7 @@ import { useState } from "react";
 
 export default function Footer() {
   const [copied, setCopied] = useState(false);
-  const email = "chokhun191@gmail.com";
+  const email = "??????";
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(email);
