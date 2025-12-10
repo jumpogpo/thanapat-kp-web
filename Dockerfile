@@ -27,7 +27,7 @@ ENV NEXT_PUBLIC_API_URL=${NEXT_PUBLIC_API_URL} \
 
 RUN bun run build && \
     if [ -f .next/trace ]; then \
-        sed -i 's/"version":"[^"]*"/"version":""/g' .next/trace; \
+        grep -rlF 'version:"15.5.7"' .next/static/chunks | xargs sed -i 's/version:"15\.5\.7"/version:""/g' && \
     fi
 
 # Runner stage
