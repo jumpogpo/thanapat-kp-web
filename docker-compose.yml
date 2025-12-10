@@ -1,5 +1,6 @@
 services:
   web:
+    container_name: thanapat-kp-web
     build:
       context: .
       dockerfile: Dockerfile
