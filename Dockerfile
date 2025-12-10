@@ -9,7 +9,7 @@ RUN apt-get update -y && \
     apt-get install -y python3 build-essential && \
     rm -rf /var/lib/apt/lists/*
 
-COPY package.json bun.lockb ./
+COPY package.json bun.lock ./
 
 RUN bun install --frozen-lockfile
 
