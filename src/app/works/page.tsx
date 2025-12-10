@@ -1,27 +1,8 @@
 import WorkCard from "@/components/work-card";
-import type { WorksType } from "@/data/works";
 import { worksData } from "@/data/works";
 
-async function getWorksData(): Promise<WorksType[]> {
-  try {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000"}/api/works`
-    );
-
-    if (!res.ok) {
-      throw new Error("Failed to fetch works data");
-    }
-
-    const data = await res.json();
-    return data;
-  } catch (error) {
-    console.error("Failed to fetch data from API:", error);
-    return worksData;
-  }
-}
-
-export default async function Works() {
-  const data: WorksType[] = await getWorksData();
+export default function Works() {
+  const data = worksData;
 
   return (
     <div className="flex flex-col items-center justify-center gap-6 pt-8 max-w-[1600px] mx-auto px-6">
