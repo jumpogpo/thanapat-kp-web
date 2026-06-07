@@ -12,7 +12,7 @@ export default function Tech({
   url?: string;
   size?: number;
 }) {
-  const Content = () => (
+  const content = (
     <>
       <div
         className="flex items-center justify-center w-auto"
@@ -34,14 +34,14 @@ export default function Tech({
         rel="noopener noreferrer"
         className="flex flex-col items-center gap-2 w-12 hover:opacity-80 transition-opacity group"
       >
-        <Content />
+        {content}
       </Link>
     );
   }
 
   return (
     <div className="flex flex-col items-center gap-2 w-12">
-      <Content />
+      {content}
     </div>
   );
 }
