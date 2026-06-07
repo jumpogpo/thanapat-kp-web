@@ -14,6 +14,10 @@
   --color-bg-primary: #121214;
   --color-bg-secondary: #1a1a1e;
   --color-bg-accent: #2e2e2e;
+
+  /* Custom Easing Curves */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 body {
@@ -38,5 +42,13 @@ body {
 
   .text-theme-secondary {
     color: var(--color-text-secondary);
+  }
+}
+
+/* Premium animations */
+@keyframes fade-slide-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

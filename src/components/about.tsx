@@ -51,7 +51,7 @@ export default async function About({ data }: { data: AboutData }) {
             href="/resume"
           >
             <span className="text-base">View Resume</span>
-            <FaArrowRightLong className="group-hover:translate-x-1 transition-all duration-300" />
+            <FaArrowRightLong className="group-hover:translate-x-1 transition-transform duration-200 ease-[var(--ease-out)]" />
           </Link>
         </div>
       </div>

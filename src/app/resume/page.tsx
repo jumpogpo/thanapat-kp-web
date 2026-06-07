@@ -18,7 +18,7 @@ export default function Resume() {
               href="/resume/Thanapat Koedpiam - Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white text-black py-2 px-4 rounded-lg hover:bg-gray-200 transition-colors flex items-center gap-2"
+              className="bg-white text-black py-2 px-4 rounded-lg hover:bg-gray-200 transition-[transform,background-color,color] duration-150 ease-[var(--ease-out)] [@media(hover:hover)_and_(pointer:fine)]:hover:scale-[1.03] active:scale-[0.97] flex items-center gap-2"
             >
               <HiOutlineDownload size={18} />
               Download PDF

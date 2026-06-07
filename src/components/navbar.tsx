@@ -13,12 +13,12 @@ export default function Navbar() {
       </Link>
 
       {/* Menu */}
-      <div className="flex space-x-4 sm:space-x-8 text-base">
+      <div className="flex space-x-4 sm:space-x-8 text-base text-theme-secondary">
         <Link
           href="/"
-          className={`hover:font-semibold transition-all ${
+          className={`hover:text-theme-primary transition-colors duration-200 ${
             pathname === "/"
-              ? "font-semibold underline underline-offset-6"
+              ? "font-semibold text-theme-primary underline underline-offset-6"
               : "hover:underline underline-offset-6"
           }`}
         >
@@ -27,9 +27,9 @@ export default function Navbar() {
 
         <Link
           href="/works"
-          className={`hover:font-semibold transition-all ${
+          className={`hover:text-theme-primary transition-colors duration-200 ${
             pathname === "/works"
-              ? "font-semibold underline underline-offset-6"
+              ? "font-semibold text-theme-primary underline underline-offset-6"
               : "hover:underline underline-offset-6"
           }`}
         >
@@ -38,9 +38,9 @@ export default function Navbar() {
 
         <Link
           href="/resume"
-          className={`hover:font-semibold transition-all ${
+          className={`hover:text-theme-primary transition-colors duration-200 ${
             pathname === "/resume"
-              ? "font-semibold underline underline-offset-6"
+              ? "font-semibold text-theme-primary underline underline-offset-6"
               : "hover:underline underline-offset-6"
           }`}
         >

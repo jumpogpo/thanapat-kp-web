@@ -11,15 +11,20 @@ export default function Works() {
 
       {/* Grid Layout - 3 cards per row on desktop, 2 on tablet, 1 on mobile */}
       <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {data.map((work) => (
-          <WorkCard
+        {data.map((work, index: number) => (
+          <div
             key={work.title}
-            title={work.title}
-            description={work.description}
-            image={work.image}
-            tags={work.tags}
-            link={work.link}
-          />
+            className="animate-[fade-slide-in_400ms_var(--ease-out)_forwards] opacity-0 translate-y-3"
+            style={{ animationDelay: `${50 + index * 50}ms` }}
+          >
+            <WorkCard
+              title={work.title}
+              description={work.description}
+              image={work.image}
+              tags={work.tags}
+              link={work.link}
+            />
+          </div>
         ))}
       </div>
     </div>
