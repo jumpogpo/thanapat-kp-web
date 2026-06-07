@@ -39,9 +39,5 @@ export default function Tech({
     );
   }
 
-  return (
-    <div className="flex flex-col items-center gap-2 w-12">
-      {content}
-    </div>
-  );
+  return <div className="flex flex-col items-center gap-2 w-12">{content}</div>;
 }

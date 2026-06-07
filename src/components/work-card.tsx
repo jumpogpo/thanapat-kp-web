@@ -17,7 +17,9 @@ export default function WorkCard({
   link?: string;
 }) {
   const content = (
-    <div className={`w-full h-full flex flex-col bg-theme-secondary rounded-lg p-6 hover:scale-105 transition-transform group`}>
+    <div
+      className={`w-full h-full flex flex-col bg-theme-secondary rounded-lg p-6 hover:scale-105 transition-transform group`}
+    >
       {/* Project Image */}
       <div className="relative w-full h-48 mb-3">
         <Image

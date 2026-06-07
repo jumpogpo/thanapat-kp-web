@@ -1,10 +1,10 @@
-@import "tailwindcss";
+@import url("tailwindcss");
 
 :root {
   /* Main colors */
   --color-primary: #121214;
   --color-secondary: #1a1a1e;
-  --color-accent: #ffffff;
+  --color-accent: #fff;
 
   /* Text colors */
   --color-text-primary: #efeff0;
