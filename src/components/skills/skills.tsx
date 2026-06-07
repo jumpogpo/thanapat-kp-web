@@ -13,18 +13,18 @@ const findSkillData = (
 
 export default function Skills({ data }: { data: Skill[] }) {
   // Get unique categories
-  const categories = Array.from(
-    new Set(data.map((skill) => skill.category))
-  ).filter(Boolean) as string[];
+  const categories = [...new Set(data.map((skill) => skill.category))].filter(
+    Boolean
+  ) as string[];
 
   // Group skills by category
   const skillsByCategory: Record<string, Skill[]> = {};
 
-  categories.forEach((category) => {
+  for (const category of categories) {
     skillsByCategory[category] = data.filter(
       (skill) => skill.category === category
     );
-  });
+  }
 
   return (
     <div className="flex flex-col gap-10 w-full">
