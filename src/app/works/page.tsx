@@ -1,5 +1,8 @@
+"use client";
+
 import WorkCard from "@/components/work-card";
 import { worksData } from "@/data/works";
+import { motion } from "framer-motion";
 
 export default function Works() {
   const data = worksData;
@@ -12,10 +15,16 @@ export default function Works() {
       {/* Grid Layout - 3 cards per row on desktop, 2 on tablet, 1 on mobile */}
       <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {data.map((work, index: number) => (
-          <div
+          <motion.div
             key={work.title}
-            className="animate-[fade-slide-in_400ms_var(--ease-out)_forwards] opacity-0 translate-y-3"
-            style={{ animationDelay: `${50 + index * 50}ms` }}
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              type: "spring",
+              duration: 0.4,
+              bounce: 0.1,
+              delay: index * 0.05,
+            }}
           >
             <WorkCard
               title={work.title}
@@ -24,7 +33,7 @@ export default function Works() {
               tags={work.tags}
               link={work.link}
             />
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>

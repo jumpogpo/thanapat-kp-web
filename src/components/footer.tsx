@@ -22,7 +22,7 @@ export default function Footer() {
         <span>Let&apos;s connect</span>
         {/* Email */}
         <button
-          className="bg-white text-black py-3 px-7 rounded-xl flex items-center space-x-3 cursor-pointer hover:text-gray-800 transition-[transform,background-color,color] duration-150 ease-[var(--ease-out)] [@media(hover:hover)_and_(pointer:fine)]:hover:scale-[1.03] active:scale-[0.97] relative group"
+          className="bg-primary text-primary-foreground py-3 px-7 rounded-xl flex items-center space-x-3 cursor-pointer hover:bg-primary/90 transition-colors duration-150 ease-out relative group"
           onClick={copyToClipboard}
           aria-label="Copy email to clipboard"
         >
@@ -30,7 +30,7 @@ export default function Footer() {
           <span className="font-semibold">{email}</span>
           <div className="relative w-4 h-4 flex items-center justify-center">
             <span
-              className={`absolute transition-[transform,opacity] duration-200 ease-[var(--ease-out)] ${
+              className={`absolute transition-[transform,opacity] duration-200 ease-out ${
                 copied
                   ? "scale-75 opacity-0 rotate-45"
                   : "scale-100 opacity-100 rotate-0"
@@ -39,18 +39,18 @@ export default function Footer() {
               <FaRegCopy size={15} />
             </span>
             <span
-              className={`absolute transition-[transform,opacity] duration-200 ease-[var(--ease-out)] ${
+              className={`absolute transition-[transform,opacity] duration-200 ease-out ${
                 copied
                   ? "scale-100 opacity-100 rotate-0"
                   : "scale-75 opacity-0 -rotate-45"
               }`}
             >
-              <FaCheck className="text-green-600" size={15} />
+              <FaCheck size={15} />
             </span>
           </div>
 
           {/* Tooltip */}
-          <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-[#393839] text-white text-sm py-1 px-2 rounded opacity-0 scale-95 translate-y-1 group-hover:opacity-100 group-hover:scale-100 group-hover:translate-y-0 transition-[opacity,transform] duration-200 ease-[var(--ease-out)] pointer-events-none whitespace-nowrap">
+          <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-popover text-popover-foreground border border-border shadow-md text-sm py-1 px-2 rounded opacity-0 scale-95 translate-y-1 group-hover:opacity-100 group-hover:scale-100 group-hover:translate-y-0 transition-[opacity,transform] duration-200 ease-out pointer-events-none whitespace-nowrap">
             {copied ? "Copied!" : "Copy"}
           </span>
         </button>
@@ -62,15 +62,15 @@ export default function Footer() {
             href="https://github.com/jumpogpo"
             target="_blank"
             rel="noopener noreferrer"
-            className="relative group transition-[transform,background-color,color] duration-150 ease-[var(--ease-out)] [@media(hover:hover)_and_(pointer:fine)]:hover:scale-[1.03] active:scale-[0.97] p-1"
+            className="relative group transition-colors duration-150 ease-out p-1"
           >
             <FaGithub
-              className="text-textcontent text-[#6b6b6b] group-hover:text-white transition-colors duration-200"
+              className="text-muted-foreground group-hover:text-foreground transition-colors duration-200"
               size={24}
             />
 
             {/* Tooltip */}
-            <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-[#393839] text-white text-sm py-1 px-2 rounded opacity-0 scale-95 translate-y-1 group-hover:opacity-100 group-hover:scale-100 group-hover:translate-y-0 transition-[opacity,transform] duration-200 ease-[var(--ease-out)] pointer-events-none whitespace-nowrap">
+            <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-popover text-popover-foreground border border-border shadow-md text-sm py-1 px-2 rounded opacity-0 scale-95 translate-y-1 group-hover:opacity-100 group-hover:scale-100 group-hover:translate-y-0 transition-[opacity,transform] duration-200 ease-out pointer-events-none whitespace-nowrap">
               GitHub
             </span>
           </a>
@@ -80,27 +80,27 @@ export default function Footer() {
             href="https://www.instagram.com/kun.tnp/"
             target="_blank"
             rel="noopener noreferrer"
-            className="relative group transition-[transform,background-color,color] duration-150 ease-[var(--ease-out)] [@media(hover:hover)_and_(pointer:fine)]:hover:scale-[1.03] active:scale-[0.97] p-1"
+            className="relative group transition-colors duration-150 ease-out p-1"
           >
             <FaInstagram
-              className="text-textcontent text-[#6b6b6b] group-hover:text-white transition-colors duration-200"
+              className="text-muted-foreground group-hover:text-foreground transition-colors duration-200"
               size={24}
             />
 
             {/* Tooltip */}
-            <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-[#393839] text-white text-sm py-1 px-2 rounded opacity-0 scale-95 translate-y-1 group-hover:opacity-100 group-hover:scale-100 group-hover:translate-y-0 transition-[opacity,transform] duration-200 ease-[var(--ease-out)] pointer-events-none whitespace-nowrap">
+            <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-popover text-popover-foreground border border-border shadow-md text-sm py-1 px-2 rounded opacity-0 scale-95 translate-y-1 group-hover:opacity-100 group-hover:scale-100 group-hover:translate-y-0 transition-[opacity,transform] duration-200 ease-out pointer-events-none whitespace-nowrap">
               Instagram
             </span>
           </a>
         </div>
 
-        <span>
+        <span className="text-muted-foreground text-sm">
           Made with ❤️ by{" "}
           <a
             href="https://github.com/jumpogpo"
             target="_blank"
             rel="noopener noreferrer"
-            className="transition-colors hover:text-white hover:underline"
+            className="transition-colors hover:text-foreground hover:underline"
           >
             jumpogpo
           </a>

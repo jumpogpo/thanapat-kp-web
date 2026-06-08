@@ -7,7 +7,7 @@ import { skills } from "@/data/skills";
 
 export default function Home() {
   return (
-    <div className="max-w-[600px] mx-auto pt-13 flex flex-col items-center gap-10 px-6">
+    <div className="max-w-150 mx-auto pt-13 flex flex-col items-center gap-10 px-6">
       <About data={aboutData} />
       <Experience data={experienceData} />
       <Skills data={skills} />

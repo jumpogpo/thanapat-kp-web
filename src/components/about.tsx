@@ -9,7 +9,7 @@ const formatBio = (bio: string): React.ReactNode => {
 
   return parts.map((part, index) => {
     return index % 2 === 1 ? (
-      <span key={index} className="font-semibold text-theme-primary">
+      <span key={index} className="font-semibold text-foreground">
         {part}
       </span>
     ) : (
@@ -32,7 +32,7 @@ export default async function About({ data }: { data: AboutData }) {
 
         <div className="flex flex-col items-center justify-center">
           <h1 className="text-xl font-semibold">{data.name}</h1>
-          <h2 className="text-base text-theme-secondary text-center">
+          <h2 className="text-base text-muted-foreground text-center">
             {data.title}
           </h2>
         </div>
@@ -40,7 +40,7 @@ export default async function About({ data }: { data: AboutData }) {
 
       <div className="flex flex-col gap-4 w-full">
         <Topic title="About" />
-        <p className="text-base leading-relaxed text-theme-secondary">
+        <p className="text-base leading-relaxed text-muted-foreground">
           {formatBio(data.bio)}
         </p>
 
@@ -51,7 +51,7 @@ export default async function About({ data }: { data: AboutData }) {
             href="/resume"
           >
             <span className="text-base">View Resume</span>
-            <FaArrowRightLong className="group-hover:translate-x-1 transition-transform duration-200 ease-[var(--ease-out)]" />
+            <FaArrowRightLong className="text-muted-foreground group-hover:text-foreground transition-colors duration-200 ease-[var(--ease-out)]" />
           </Link>
         </div>
       </div>

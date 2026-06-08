@@ -3,9 +3,10 @@ import { Space_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import { ThemeProvider } from "@wrksz/themes/next";
 
-const jetBrainsMono = Space_Mono({
-  variable: "--font-jetbrains-mono",
+const mono = Space_Mono({
+  variable: "--font-mono",
   subsets: ["latin"],
   weight: ["400", "700"],
 });
@@ -58,13 +59,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full">
+    <html lang="en" className="h-full" suppressHydrationWarning>
       <body
-        className={`${jetBrainsMono.className} antialiased min-h-screen flex flex-col`}
+        className={`${mono.variable} antialiased min-h-screen flex flex-col`}
       >
-        <Navbar />
-        <main className="flex-grow">{children}</main>
-        <Footer />
+        <ThemeProvider defaultTheme="dark">
+          <Navbar />
+          <main className="grow">{children}</main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

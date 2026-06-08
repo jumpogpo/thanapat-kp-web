@@ -21,7 +21,9 @@ export default function Tech({
         {icon}
       </div>
       <div className="flex items-center gap-1 mt-1">
-        <span className="text-sm text-textcontent text-center">{name}</span>
+        <span className="text-sm text-muted-foreground text-center">
+          {name}
+        </span>
       </div>
     </>
   );

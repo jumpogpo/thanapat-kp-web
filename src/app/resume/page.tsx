@@ -18,7 +18,7 @@ export default function Resume() {
               href="/resume/Thanapat Koedpiam - Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white text-black py-2 px-4 rounded-lg hover:bg-gray-200 transition-[transform,background-color,color] duration-150 ease-[var(--ease-out)] [@media(hover:hover)_and_(pointer:fine)]:hover:scale-[1.03] active:scale-[0.97] flex items-center gap-2"
+              className="bg-primary text-primary-foreground py-2 px-4 rounded-lg hover:bg-primary/90 transition-colors duration-150 ease-[var(--ease-out)] flex items-center gap-2"
             >
               <HiOutlineDownload size={18} />
               Download PDF
@@ -40,7 +40,7 @@ export default function Resume() {
       </div>
 
       {/* Description */}
-      <p className="text-center text-theme-500 mt-4">
+      <p className="text-center text-muted-foreground mt-4">
         This is my professional resume. You can view it directly in the browser
         or download it using the button above.
       </p>

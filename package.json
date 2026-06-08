@@ -10,6 +10,7 @@
     "format": "prettier --write . && stylelint '**/*.{css,scss}' --fix"
   },
   "dependencies": {
+    "@wrksz/themes": "^0.9.3",
     "developer-icons": "^7.0.1",
     "framer-motion": "^12.40.0",
     "next": "16.2.7",

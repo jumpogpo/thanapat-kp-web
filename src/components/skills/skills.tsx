@@ -33,7 +33,7 @@ export default function Skills({ data }: { data: Skill[] }) {
       <div className="flex flex-col gap-1 w-full px-6">
         {categories.map((category, index) => (
           <div key={category} className="w-full">
-            {index > 0 && <div className="w-full h-px bg-white my-4"></div>}
+            {index > 0 && <div className="w-full h-px bg-border my-4"></div>}
             <div className="flex flex-row flex-wrap gap-x-16 gap-y-5 justify-start pt-2">
               {skillsByCategory[category].map((skill) => {
                 const { icon: IconComponent } = skill.icon
@@ -51,7 +51,7 @@ export default function Skills({ data }: { data: Skill[] }) {
             </div>
 
             <div className="flex justify-end mt-4">
-              <div className="text-base font-semibold px-1.5 py-1 bg-theme-secondary rounded-md text-theme-primary">
+              <div className="text-base font-semibold px-1.5 py-1 bg-muted rounded-md text-foreground">
                 {category.charAt(0).toUpperCase() + category.slice(1)}
               </div>
             </div>
