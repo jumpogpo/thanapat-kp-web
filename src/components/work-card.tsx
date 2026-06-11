@@ -1,7 +1,7 @@
 import Image from "next/image";
-import Tag from "./tag";
 import Link from "next/link";
-import { FiExternalLink } from "react-icons/fi";
+import { ArrowUpRightIcon } from "@phosphor-icons/react";
+import { Badge } from "@cloudflare/kumo";
 
 export default function WorkCard({
   title,
@@ -46,7 +46,7 @@ export default function WorkCard({
           {title}
         </h1>
         {link && (
-          <FiExternalLink className="w-3.5 h-3.5 text-muted-foreground group-hover:text-foreground transition-colors duration-200 ease-[var(--ease-out)]" />
+          <ArrowUpRightIcon className="w-3.5 h-3.5 text-muted-foreground group-hover:text-foreground transition-colors duration-200 ease-out" />
         )}
       </div>
 
@@ -54,12 +54,14 @@ export default function WorkCard({
       <p className="text-sm text-muted-foreground mt-2 mb-4">{description}</p>
 
       {/* Spacer to push the tags to the bottom */}
-      <div className="flex-grow"></div>
+      <div className="grow"></div>
 
       {/* Tags */}
       <div className="flex flex-row flex-wrap gap-2 mt-auto">
         {tags?.map((tag, index) => (
-          <Tag key={index} title={tag} />
+          <Badge key={index} variant="secondary">
+            {tag}
+          </Badge>
         ))}
       </div>
     </div>

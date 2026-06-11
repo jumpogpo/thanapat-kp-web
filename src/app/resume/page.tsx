@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { HiOutlineDownload } from "react-icons/hi";
+import { DownloadSimple } from "@phosphor-icons/react";
+import { LinkButton } from "@cloudflare/kumo";
 
 export default function Resume() {
   return (
@@ -14,15 +15,14 @@ export default function Resume() {
         <div className="w-full xl:w-[50%] lg:w-[80%] md:w-[80%] flex flex-col">
           {/* Download Button - aligned to the right */}
           <div className="w-full flex justify-end mb-2">
-            <a
+            <LinkButton
               href="/resume/Thanapat Koedpiam - Resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-primary text-primary-foreground py-2 px-4 rounded-lg hover:bg-primary/90 transition-colors duration-150 ease-[var(--ease-out)] flex items-center gap-2"
+              external
+              variant="primary"
+              icon={<DownloadSimple size={18} />}
             >
-              <HiOutlineDownload size={18} />
               Download PDF
-            </a>
+            </LinkButton>
           </div>
 
           {/* Resume Image */}

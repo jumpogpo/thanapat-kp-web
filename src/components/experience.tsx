@@ -3,7 +3,7 @@
 import Topic from "./topic";
 import { FiExternalLink } from "react-icons/fi";
 import { ExperienceItem } from "@/data/experiences";
-import Tag from "./tag";
+import { Badge } from "@cloudflare/kumo";
 import { motion } from "framer-motion";
 
 export default function Experience({ data }: { data: ExperienceItem[] }) {
@@ -60,7 +60,9 @@ export default function Experience({ data }: { data: ExperienceItem[] }) {
 
               <div className="flex flex-row flex-wrap gap-2 mt-auto">
                 {exp.tags?.map((tag, index) => (
-                  <Tag key={index} title={tag} />
+                  <Badge key={index} variant="secondary">
+                    {tag}
+                  </Badge>
                 ))}
               </div>
             </motion.div>

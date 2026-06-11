@@ -2,8 +2,9 @@
 
 import { useTheme } from "@wrksz/themes/client";
 import { useEffect, useState } from "react";
-import { FiSun, FiMoon } from "react-icons/fi";
+import { SunIcon, MoonStarsIcon } from "@phosphor-icons/react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Button } from "@cloudflare/kumo";
 
 export default function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme();
@@ -21,10 +22,12 @@ export default function ThemeToggle() {
   const isDark = resolvedTheme === "dark";
 
   return (
-    <button
+    <Button
+      variant="ghost"
+      shape="square"
       onClick={() => setTheme(isDark ? "light" : "dark")}
-      className="p-2 rounded-lg hover:bg-muted transition-colors duration-200 cursor-pointer focus:outline-none flex items-center justify-center text-muted-foreground hover:text-foreground relative size-9 overflow-hidden"
       aria-label="Toggle theme"
+      className="relative overflow-hidden cursor-pointer"
     >
       <AnimatePresence mode="wait" initial={false}>
         <motion.div
@@ -33,11 +36,11 @@ export default function ThemeToggle() {
           animate={{ y: 0, opacity: 1, rotate: 0 }}
           exit={{ y: 20, opacity: 0, rotate: 90 }}
           transition={{ duration: 0.2, ease: "easeInOut" }}
-          className="absolute"
+          className="absolute inset-0 flex items-center justify-center"
         >
-          {isDark ? <FiMoon size={18} /> : <FiSun size={18} />}
+          {isDark ? <MoonStarsIcon size={18} /> : <SunIcon size={18} />}
         </motion.div>
       </AnimatePresence>
-    </button>
+    </Button>
   );
 }

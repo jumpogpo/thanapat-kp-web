@@ -63,7 +63,7 @@ export default function RootLayout({
       <body
         className={`${mono.variable} antialiased min-h-screen flex flex-col`}
       >
-        <ThemeProvider defaultTheme="dark">
+        <ThemeProvider defaultTheme="dark" attribute={["class", "data-mode"]}>
           <Navbar />
           <main className="grow">{children}</main>
           <Footer />
