@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { DownloadSimple } from "@phosphor-icons/react";
+import { DownloadSimpleIcon } from "@phosphor-icons/react";
 import { LinkButton } from "@cloudflare/kumo";
 
 export default function Resume() {
@@ -19,7 +19,7 @@ export default function Resume() {
               href="/resume/Thanapat Koedpiam - Resume.pdf"
               external
               variant="primary"
-              icon={<DownloadSimple size={18} />}
+              icon={<DownloadSimpleIcon size={18} />}
             >
               Download PDF
             </LinkButton>
