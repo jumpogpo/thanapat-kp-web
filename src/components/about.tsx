@@ -24,7 +24,7 @@ export default async function About({ data }: { data: AboutData }) {
       <div className="flex flex-col gap-4 items-center justify-center">
         <Image
           src={data.avatar}
-          className="rounded-full outline-1 outline-white border-transparent border-3"
+          className="rounded-full outline-1 border-transparent border-3"
           alt="Profile"
           width={100}
           height={100}
@@ -51,7 +51,7 @@ export default async function About({ data }: { data: AboutData }) {
             href="/resume"
           >
             <span className="text-base">View Resume</span>
-            <FaArrowRightLong className="text-muted-foreground group-hover:text-foreground transition-colors duration-200 ease-[var(--ease-out)]" />
+            <FaArrowRightLong className="text-muted-foreground group-hover:text-foreground transition-colors duration-200 ease-out" />
           </Link>
         </div>
       </div>
