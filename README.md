@@ -9,11 +9,7 @@
 
 **A modern, responsive personal portfolio website**
 
-[✨ Features](#-features) •
-[🛠️ Tech Stack](#️-tech-stack) •
-[🏁 Getting Started](#-getting-started) •
-[📚 Project Structure](#-project-structure) •
-[🚀 Deployment](#-deployment)
+[✨ Features](#-features) • [🛠️ Tech Stack](#️-tech-stack) • [🏁 Getting Started](#-getting-started) • [📚 Project Structure](#-project-structure) • [🚀 Deployment](#-deployment)
 
 </div>
 
@@ -118,12 +114,12 @@ thanapat-kp-web/
 
 You can easily customize the content by modifying the data files in the `src/data` directory:
 
-| File             | Description                                                        |
-| ---------------- | ------------------------------------------------------------------ |
-| `about.ts`       | Edit your personal information, bio, and contact details           |
-| `skills.ts`      | Update your technical skills, tools, and proficiency levels        |
-| `works.ts`       | Add or modify your portfolio projects with descriptions and images |
-| `experiences.ts` | Update your work history, roles, and achievements                  |
+| File | Description |
+| --- | --- |
+| `about.ts` | Edit your personal information, bio, and contact details |
+| `skills.ts` | Update your technical skills, tools, and proficiency levels |
+| `works.ts` | Add or modify your portfolio projects with descriptions and images |
+| `experiences.ts` | Update your work history, roles, and achievements |
 
 ## 📦 Dependencies
 
