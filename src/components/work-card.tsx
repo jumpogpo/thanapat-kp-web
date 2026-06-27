@@ -17,7 +17,7 @@ export default function WorkCard({
   link?: string;
 }) {
   const content = (
-    <div className={`w-full h-full flex flex-col bg-theme-secondary rounded-lg p-6 hover:scale-105 transition-transform group`}>
+    <div className={`w-full h-full flex flex-col bg-theme-secondary rounded-lg p-6 hover:scale-105 active:scale-105 transition-transform group`}>
       {/* Project Image */}
       <div className="relative w-full h-48 mb-3">
         <Image
@@ -32,13 +32,13 @@ export default function WorkCard({
 
       {/* Title with external link icon */}
       <div className="flex flex-row items-center gap-2">
-        <h1
+        <h2
           className={`text-base font-semibold text-theme-primary transition-all hover:outline-theme-primary ${
             link ? "group-hover:underline group-hover:underline-offset-5" : ""
           }`}
         >
           {title}
-        </h1>
+        </h2>
         {link && (
           <FiExternalLink className="w-3.5 h-3.5 text-theme-secondary" />
         )}

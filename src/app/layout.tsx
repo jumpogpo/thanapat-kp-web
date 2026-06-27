@@ -43,9 +43,9 @@ export const metadata: Metadata = {
     siteName: "Thanapat Koedpiam Portfolio",
     images: [
       {
-        url: "./icon.ico",
-        width: 1200,
-        height: 630,
+        url: "/preview.png",
+        width: 1691,
+        height: 835,
         alt: "Thanapat Koedpiam Portfolio",
       },
     ],

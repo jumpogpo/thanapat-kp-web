@@ -13,7 +13,7 @@ export default async function Experience({ data }: { data: ExperienceItem[] }) {
         {data.map((exp, index: number) => (
           <div
             key={index}
-            className="flex flex-col gap-3 bg-theme-secondary p-4 rounded-2xl hover:scale-105 transition-transform"
+            className="flex flex-col gap-3 bg-theme-secondary p-4 rounded-2xl hover:scale-105 active:scale-105 transition-transform"
           >
             <div>
               {/* Title */}
@@ -32,9 +32,7 @@ export default async function Experience({ data }: { data: ExperienceItem[] }) {
                     <FiExternalLink className="w-3.5 h-3.5" />
                   </a>
                 ) : (
-                  <p className="text-base text-theme-secondary">
-                    {exp.company}
-                  </p>
+                  <p className="text-sm text-theme-secondary">{exp.company}</p>
                 )}
 
                 {/* Period */}

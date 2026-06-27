@@ -1,3 +1,3 @@
 export default function Topic({ title }: { title: string }) {
-  return <h1 className="text-xl font-semibold">{title}</h1>;
+  return <h2 className="text-xl font-semibold">{title}</h2>;
 }

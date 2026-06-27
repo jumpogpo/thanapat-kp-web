@@ -25,22 +25,30 @@ export default function Resume() {
             </a>
           </div>
 
-          {/* Resume Image */}
-          <Image
-            className="w-full h-full rounded-lg"
-            src="/resume/Thanapat Koedpiam - Resume.png"
-            alt="My Resume"
-            sizes="100vw"
-            width={800}
-            height={100}
-            quality={100}
-            priority
-          />
+          {/* Resume Image - click to open full-size PDF */}
+          <a
+            href="/resume/Thanapat Koedpiam - Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block cursor-zoom-in"
+            aria-label="Open full-size resume PDF"
+          >
+            <Image
+              className="w-full h-full rounded-lg"
+              src="/resume/Thanapat Koedpiam - Resume.png"
+              alt="My Resume"
+              sizes="100vw"
+              width={800}
+              height={100}
+              quality={100}
+              priority
+            />
+          </a>
         </div>
       </div>
 
       {/* Description */}
-      <p className="text-center text-theme-500 mt-4">
+      <p className="text-center text-theme-secondary mt-4">
         This is my professional resume. You can view it directly in the browser
         or download it using the button above.
       </p>

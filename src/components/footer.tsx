@@ -31,7 +31,7 @@ export default function Footer() {
           {copied ? <FaCheck /> : <FaRegCopy />}
 
           {/* Tooltip */}
-          <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-[#393839] text-white text-sm py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
+          <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-[#393839] text-white text-sm py-1 px-2 rounded opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
             {copied ? "Copied!" : "Copy"}
           </span>
         </button>
@@ -44,14 +44,15 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             className="relative group"
+            aria-label="GitHub"
           >
             <FaGithub
-              className="text-textcontent text-[#6b6b6b] hover:text-white transition duration-100 hover:scale-110"
+              className="text-[#6b6b6b] hover:text-white transition duration-100 hover:scale-110"
               size={24}
             />
 
             {/* Tooltip */}
-            <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-[#393839] text-white text-sm py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
+            <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-[#393839] text-white text-sm py-1 px-2 rounded opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
               GitHub
             </span>
           </a>
@@ -62,14 +63,15 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             className="relative group"
+            aria-label="Instagram"
           >
             <FaInstagram
-              className="text-textcontent text-[#6b6b6b] hover:text-white transition duration-100 hover:scale-110"
+              className="text-[#6b6b6b] hover:text-white transition duration-100 hover:scale-110"
               size={24}
             />
 
             {/* Tooltip */}
-            <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-[#393839] text-white text-sm py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
+            <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-[#393839] text-white text-sm py-1 px-2 rounded opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
               Instagram
             </span>
           </a>
