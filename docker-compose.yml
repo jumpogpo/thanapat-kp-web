@@ -7,10 +7,16 @@ services:
       args:
         - NEXT_PUBLIC_API_URL=${NEXT_PUBLIC_API_URL}
     restart: always
-    ports:
-      - "3000:3000"
     environment:
       - NODE_ENV=production
       - NEXT_PUBLIC_API_URL=${NEXT_PUBLIC_API_URL}
     env_file:
       - .env
+    expose:
+      - "3000"
+    networks:
+      - nginx-network
+
+networks:
+  nginx-network:
+    external: true
