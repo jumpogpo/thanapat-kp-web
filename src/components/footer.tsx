@@ -3,6 +3,16 @@
 import { FaGithub, FaRegCopy, FaCheck, FaInstagram } from "react-icons/fa6";
 import { MdOutlineMailOutline } from "react-icons/md";
 import { useState } from "react";
+import { Reveal } from "./motion";
+
+const socials = [
+  { href: "https://github.com/jumpogpo", label: "GitHub", Icon: FaGithub },
+  {
+    href: "https://www.instagram.com/kun.tnp/",
+    label: "Instagram",
+    Icon: FaInstagram,
+  },
+];
 
 export default function Footer() {
   const [copied, setCopied] = useState(false);
@@ -11,83 +21,64 @@ export default function Footer() {
   const copyToClipboard = () => {
     navigator.clipboard.writeText(email);
     setCopied(true);
-    setTimeout(() => {
-      setCopied(false);
-    }, 800);
+    setTimeout(() => setCopied(false), 1200);
   };
 
   return (
-    <footer className="w-full mt-auto pt-8 pb-4 px-6">
-      <div className="flex flex-col justify-center items-center space-y-4">
-        <span>Let&apos;s connect</span>
-        {/* Email */}
-        <button
-          className="bg-white text-black py-3 px-7 rounded-xl flex items-center space-x-3 cursor-pointer hover:text-gray-800 hover:scale-105 transition-all relative group"
-          onClick={copyToClipboard}
-          aria-label="Copy email to clipboard"
-        >
-          <MdOutlineMailOutline size={20} />
-          <span className="font-semibold">{email}</span>
-          {copied ? <FaCheck /> : <FaRegCopy />}
+    <footer className="mt-auto w-full px-6 pb-8 pt-16">
+      <div className="mx-auto max-w-2xl">
+        <div className="hairline mb-10" />
 
-          {/* Tooltip */}
-          <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-[#393839] text-white text-sm py-1 px-2 rounded opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
-            {copied ? "Copied!" : "Copy"}
-          </span>
-        </button>
+        <Reveal className="flex flex-col items-center gap-5 text-center">
+          <div className="flex flex-col items-center gap-1">
+            <span className="eyebrow">Get in touch</span>
+            <h2 className="text-lg font-bold tracking-tight">
+              Let&apos;s connect
+            </h2>
+          </div>
 
-        {/* Social Media */}
-        <div className="flex space-x-4">
-          {/* GitHub */}
-          <a
-            href="https://github.com/jumpogpo"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="relative group"
-            aria-label="GitHub"
+          {/* Email */}
+          <button
+            className="group relative inline-flex items-center gap-3 rounded-xl bg-white px-6 py-3 text-black transition-transform duration-200 hover:scale-105 active:scale-95"
+            onClick={copyToClipboard}
+            aria-label="Copy email to clipboard"
           >
-            <FaGithub
-              className="text-[#6b6b6b] hover:text-white transition duration-100 hover:scale-110"
-              size={24}
-            />
+            <MdOutlineMailOutline size={20} />
+            <span className="font-semibold">{email}</span>
+            {copied ? (
+              <FaCheck className="text-emerald-600" />
+            ) : (
+              <FaRegCopy className="opacity-70" />
+            )}
 
-            {/* Tooltip */}
-            <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-[#393839] text-white text-sm py-1 px-2 rounded opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
-              GitHub
+            <span className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-theme-elevated px-2 py-1 text-xs text-theme-primary opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100">
+              {copied ? "Copied!" : "Copy"}
             </span>
-          </a>
+          </button>
 
-          {/* Instagram */}
-          <a
-            href="https://www.instagram.com/kun.tnp/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="relative group"
-            aria-label="Instagram"
-          >
-            <FaInstagram
-              className="text-[#6b6b6b] hover:text-white transition duration-100 hover:scale-110"
-              size={24}
-            />
+          {/* Social */}
+          <div className="flex items-center gap-3">
+            {socials.map(({ href, label, Icon }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="group relative grid h-10 w-10 place-items-center rounded-lg border border-theme text-theme-faint transition-all duration-200 hover:-translate-y-0.5 hover:border-[rgba(255,255,255,0.16)] hover:text-theme-primary"
+              >
+                <Icon size={20} />
+                <span className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-theme-elevated px-2 py-1 text-xs text-theme-primary opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100">
+                  {label}
+                </span>
+              </a>
+            ))}
+          </div>
 
-            {/* Tooltip */}
-            <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-[#393839] text-white text-sm py-1 px-2 rounded opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
-              Instagram
-            </span>
-          </a>
-        </div>
-
-        <span>
-          Made with ❤️ by{" "}
-          <a
-            href="https://github.com/jumpogpo"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-colors hover:font-semibold  hover:underline"
-          >
-            jumpogpo
-          </a>
-        </span>
+          <p className="text-xs text-theme-faint">
+            © 2026 Thanapat Koedpiam · Built with Next.js
+          </p>
+        </Reveal>
       </div>
     </footer>
   );

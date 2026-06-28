@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Tag from "./tag";
 import Link from "next/link";
-import { FiExternalLink } from "react-icons/fi";
+import { FiArrowUpRight } from "react-icons/fi";
 
 export default function WorkCard({
   title,
@@ -16,45 +16,39 @@ export default function WorkCard({
   tags?: string[];
   link?: string;
 }) {
-  const content = (
-    <div className={`w-full h-full flex flex-col bg-theme-secondary rounded-lg p-6 hover:scale-105 active:scale-105 transition-transform group`}>
-      {/* Project Image */}
-      <div className="relative w-full h-48 mb-3">
+  const inner = (
+    <div className="flex h-full flex-col overflow-hidden rounded-xl border border-theme bg-theme-secondary transition-colors group-hover:border-[rgba(255,255,255,0.16)]">
+      {/* Project image */}
+      <div className="relative aspect-video w-full overflow-hidden">
         <Image
           src={image}
           alt={title}
           fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 25vw"
-          quality={100}
-          className="rounded-lg object-cover"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          quality={90}
+          className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
         />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
       </div>
 
-      {/* Title with external link icon */}
-      <div className="flex flex-row items-center gap-2">
-        <h2
-          className={`text-base font-semibold text-theme-primary transition-all hover:outline-theme-primary ${
-            link ? "group-hover:underline group-hover:underline-offset-5" : ""
-          }`}
-        >
-          {title}
-        </h2>
-        {link && (
-          <FiExternalLink className="w-3.5 h-3.5 text-theme-secondary" />
-        )}
-      </div>
+      {/* Body */}
+      <div className="flex flex-1 flex-col p-5">
+        <div className="flex items-center gap-1.5">
+          <h2 className="text-base font-bold text-theme-primary">{title}</h2>
+          {link && (
+            <FiArrowUpRight className="h-4 w-4 text-theme-faint transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-theme-primary" />
+          )}
+        </div>
 
-      {/* Description */}
-      <p className="text-sm text-theme-secondary mt-2 mb-4">{description}</p>
+        <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-theme-secondary">
+          {description}
+        </p>
 
-      {/* Spacer to push the tags to the bottom */}
-      <div className="flex-grow"></div>
-
-      {/* Tags */}
-      <div className="flex flex-row flex-wrap gap-2 mt-auto">
-        {tags?.map((tag, index) => (
-          <Tag key={index} title={tag} />
-        ))}
+        <div className="mt-auto flex flex-row flex-wrap gap-2 pt-4">
+          {tags?.map((tag, index) => (
+            <Tag key={index} title={tag} />
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -65,12 +59,12 @@ export default function WorkCard({
         href={link}
         target="_blank"
         rel="noopener noreferrer"
-        className="block w-full h-full"
+        className="block h-full"
       >
-        {content}
+        {inner}
       </Link>
     );
   }
 
-  return <div className="block w-full h-full">{content}</div>;
+  return <div className="h-full">{inner}</div>;
 }

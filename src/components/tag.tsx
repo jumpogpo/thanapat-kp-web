@@ -1,7 +1,7 @@
 export default function Tag({ title }: { title: string }) {
   return (
-    <div className="w-fit text-sm bg-theme-primary border border-white/[0.06] rounded-lg px-2 py-1">
+    <span className="inline-block w-fit rounded-md border border-theme bg-theme-primary px-2 py-0.5 text-xs text-theme-secondary">
       {title}
-    </div>
+    </span>
   );
 }

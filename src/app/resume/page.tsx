@@ -2,56 +2,61 @@
 
 import Image from "next/image";
 import { HiOutlineDownload } from "react-icons/hi";
+import { Reveal } from "@/components/motion";
+
+const RESUME_PDF = "/resume/Thanapat Koedpiam - Resume.pdf";
+const RESUME_IMG = "/resume/Thanapat Koedpiam - Resume.png";
 
 export default function Resume() {
   return (
-    <div className="w-full flex flex-col items-center justify-center gap-6 pt-8 px-6">
-      {/* Title */}
-      <h1 className="text-2xl font-semibold">My Resume</h1>
+    <div className="mx-auto flex max-w-3xl flex-col gap-8 px-6 pb-12 pt-14">
+      {/* Heading */}
+      <Reveal className="flex flex-col items-center gap-2 text-center">
+        <span className="eyebrow">Curriculum Vitae</span>
+        <h1 className="text-2xl font-bold tracking-tight">My Resume</h1>
+        <p className="max-w-md text-sm text-theme-secondary">
+          View it below or download a copy — click the page to open it
+          full-size.
+        </p>
+      </Reveal>
 
-      {/* Resume Container with Download Button */}
-      <div className="w-full flex flex-col items-center">
-        <div className="w-full xl:w-[50%] lg:w-[80%] md:w-[80%] flex flex-col">
-          {/* Download Button - aligned to the right */}
-          <div className="w-full flex justify-end mb-2">
-            <a
-              href="/resume/Thanapat Koedpiam - Resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-white text-black py-2 px-4 rounded-lg hover:bg-gray-200 transition-colors flex items-center gap-2"
-            >
-              <HiOutlineDownload size={18} />
-              Download PDF
-            </a>
-          </div>
-
-          {/* Resume Image - click to open full-size PDF */}
+      <Reveal delay={0.05} className="flex flex-col gap-3">
+        {/* Download button */}
+        <div className="flex justify-end">
           <a
-            href="/resume/Thanapat Koedpiam - Resume.pdf"
+            href={RESUME_PDF}
             target="_blank"
             rel="noopener noreferrer"
-            className="block cursor-zoom-in"
-            aria-label="Open full-size resume PDF"
+            className="group inline-flex items-center gap-2 rounded-lg bg-white px-4 py-2 text-sm font-semibold text-black transition-transform duration-200 hover:scale-[1.03] active:scale-95"
           >
-            <Image
-              className="w-full h-full rounded-lg"
-              src="/resume/Thanapat Koedpiam - Resume.png"
-              alt="My Resume"
-              sizes="100vw"
-              width={800}
-              height={100}
-              quality={100}
-              priority
+            <HiOutlineDownload
+              size={18}
+              className="transition-transform duration-300 group-hover:translate-y-0.5"
             />
+            Download PDF
           </a>
         </div>
-      </div>
 
-      {/* Description */}
-      <p className="text-center text-theme-secondary mt-4">
-        This is my professional resume. You can view it directly in the browser
-        or download it using the button above.
-      </p>
+        {/* Resume preview - click to open full-size PDF */}
+        <a
+          href={RESUME_PDF}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open full-size resume PDF"
+          className="group block cursor-zoom-in overflow-hidden rounded-xl border border-theme bg-theme-secondary p-2 transition-colors hover:border-[rgba(255,255,255,0.16)]"
+        >
+          <Image
+            className="w-full rounded-lg transition-transform duration-500 ease-out group-hover:scale-[1.01]"
+            src={RESUME_IMG}
+            alt="My Resume"
+            width={1414}
+            height={2000}
+            sizes="(max-width: 768px) 100vw, 768px"
+            quality={100}
+            priority
+          />
+        </a>
+      </Reveal>
     </div>
   );
 }

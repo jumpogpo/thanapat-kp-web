@@ -5,24 +5,24 @@ export default function Tech({
   name,
   icon,
   url,
-  size = 32,
+  size = 34,
 }: {
   name: string;
   icon: React.ReactNode;
   url?: string;
   size?: number;
 }) {
-  const Content = () => (
+  const content = (
     <>
       <div
-        className="flex items-center justify-center w-auto"
+        className="flex items-center justify-center grayscale opacity-80 transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100 group-hover:-translate-y-1"
         style={{ width: size, height: size }}
       >
         {icon}
       </div>
-      <div className="flex items-center gap-1 mt-1">
-        <span className="text-sm text-center">{name}</span>
-      </div>
+      <span className="text-center text-xs text-theme-faint transition-colors duration-300 group-hover:text-theme-secondary">
+        {name}
+      </span>
     </>
   );
 
@@ -32,16 +32,14 @@ export default function Tech({
         href={url}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex flex-col items-center gap-2 w-12 hover:opacity-80 transition-opacity group"
+        className="group flex w-16 flex-col items-center gap-2"
       >
-        <Content />
+        {content}
       </Link>
     );
   }
 
   return (
-    <div className="flex flex-col items-center gap-2 w-12">
-      <Content />
-    </div>
+    <div className="group flex w-16 flex-col items-center gap-2">{content}</div>
   );
 }

@@ -2,51 +2,63 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { motion } from "framer-motion";
+
+const links = [
+  { href: "/", label: "About" },
+  { href: "/works", label: "Works" },
+  { href: "/resume", label: "Resume" },
+];
 
 export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <div className="flex w-full justify-between p-4 space-x-4 text-lg px-6 items-center">
-      <Link href="/" className="font-semibold">
-        <span className="text-theme-primary text-base">THANAPAT-KP</span>
-      </Link>
-
-      {/* Menu */}
-      <div className="flex space-x-4 sm:space-x-8 text-base">
+    <motion.header
+      initial={{ opacity: 0, y: -16 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+      className="sticky top-0 z-50 border-b border-theme bg-[#0d0d0f]/70 backdrop-blur-md"
+    >
+      <nav className="mx-auto flex max-w-3xl items-center justify-between px-6 py-4">
         <Link
           href="/"
-          className={`hover:font-semibold transition-all ${
-            pathname === "/"
-              ? "font-semibold underline underline-offset-6"
-              : "hover:underline underline-offset-6"
-          }`}
+          className="group inline-flex items-center gap-2 text-base font-bold tracking-tight"
         >
-          <span>About</span>
+          <span className="inline-block h-2 w-2 rounded-full bg-white transition-transform duration-300 group-hover:scale-125" />
+          <span>THANAPAT-KP</span>
         </Link>
 
-        <Link
-          href="/works"
-          className={`hover:font-semibold transition-all ${
-            pathname === "/works"
-              ? "font-semibold underline underline-offset-6"
-              : "hover:underline underline-offset-6"
-          }`}
-        >
-          <span>Works</span>
-        </Link>
-
-        <Link
-          href="/resume"
-          className={`hover:font-semibold transition-all ${
-            pathname === "/resume"
-              ? "font-semibold underline underline-offset-6"
-              : "hover:underline underline-offset-6"
-          }`}
-        >
-          <span>Resume</span>
-        </Link>
-      </div>
-    </div>
+        <div className="flex items-center gap-1 text-sm sm:gap-2">
+          {links.map(({ href, label }) => {
+            const active = pathname === href;
+            return (
+              <Link
+                key={href}
+                href={href}
+                className="relative px-3 py-2 transition-colors"
+              >
+                <span
+                  className={
+                    active
+                      ? "text-theme-primary"
+                      : "text-theme-secondary transition-colors hover:text-theme-primary"
+                  }
+                >
+                  {label}
+                </span>
+                {active && (
+                  <motion.span
+                    layoutId="nav-underline"
+                    className="absolute inset-x-2 -bottom-0.5 h-px bg-white"
+                    transition={{ type: "spring", stiffness: 400, damping: 32 }}
+                  />
+                )}
+              </Link>
+            );
+          })}
+        </div>
+      </nav>
+    </motion.header>
   );
 }

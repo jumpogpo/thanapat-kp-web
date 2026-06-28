@@ -1,44 +1,108 @@
 @import "tailwindcss";
 
 :root {
-  /* Main colors */
-  --color-primary: #121214;
-  --color-secondary: #1a1a1e;
+  /* Layered surfaces (dark, refined) */
+  --color-primary: #0d0d0f;
+  --color-secondary: #161619;
   --color-accent: #ffffff;
 
-  /* Text colors */
-  --color-text-primary: #efeff0;
-  --color-text-secondary: #94959c;
+  /* Text */
+  --color-text-primary: #f4f4f5;
+  --color-text-secondary: #9b9ca3;
+  --color-text-faint: #6c6d75;
 
-  /* Background colors */
-  --color-bg-primary: #121214;
-  --color-bg-secondary: #1a1a1e;
-  --color-bg-accent: #2e2e2e;
+  /* Backgrounds */
+  --color-bg-primary: #0d0d0f;
+  --color-bg-secondary: #161619;
+  --color-bg-elevated: #1f1f24;
+
+  /* Hairline borders */
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-strong: rgba(255, 255, 255, 0.14);
+
+  /* Radii */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background-color: var(--color-bg-primary);
+  font-family: var(--font-mono), ui-monospace, monospace;
   color: var(--color-text-primary);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-bg-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Soft radial spotlight behind everything */
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  content: "";
+  background:
+    radial-gradient(
+      60rem 40rem at 50% -10%,
+      rgba(255, 255, 255, 0.05),
+      transparent 70%
+    ),
+    radial-gradient(
+      40rem 30rem at 90% 10%,
+      rgba(255, 255, 255, 0.025),
+      transparent 70%
+    );
+}
+
+::selection {
+  color: #0d0d0f;
+  background: var(--color-accent);
+}
+
+/* Slim, unobtrusive scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.16) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.28);
 }
 
 /* Keyboard focus ring for interactive elements */
 a:focus-visible,
 button:focus-visible {
-  border-radius: 4px;
+  border-radius: 6px;
   outline: 2px solid var(--color-accent);
-  outline-offset: 2px;
+  outline-offset: 3px;
 }
 
 /* Respect users who prefer reduced motion */
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   *,
   *::before,
   *::after {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
-    scroll-behavior: auto !important;
   }
 }
 
@@ -52,11 +116,49 @@ button:focus-visible {
     background-color: var(--color-bg-secondary);
   }
 
+  .bg-theme-elevated {
+    background-color: var(--color-bg-elevated);
+  }
+
   .text-theme-primary {
     color: var(--color-text-primary);
   }
 
   .text-theme-secondary {
     color: var(--color-text-secondary);
+  }
+
+  .text-theme-faint {
+    color: var(--color-text-faint);
+  }
+
+  .border-theme {
+    border-color: var(--color-border);
+  }
+
+  /* Frosted card surface with hairline border */
+  .surface {
+    background-color: color-mix(in srgb, var(--color-bg-secondary) 80%, transparent);
+    border: 1px solid var(--color-border);
+    backdrop-filter: blur(8px);
+  }
+
+  /* Gradient hairline divider */
+  .hairline {
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      var(--color-border-strong),
+      transparent
+    );
+  }
+
+  /* Mono label / eyebrow */
+  .eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-text-faint);
   }
 }
