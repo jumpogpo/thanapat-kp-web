@@ -24,6 +24,14 @@ export const worksData: WorksType[] = [
     link: "https://www.roblox.com/games/4954512662/",
   },
   {
+    title: "AI Chinese Checkers",
+    description:
+      "A web-based Chinese Checkers game supporting 2-6 players with AI opponents across Easy, Medium, and Hard difficulties. The AI engine is powered by a Minimax algorithm with Alpha-Beta Pruning at varying search depths, and also drives a hint system that suggests optimal moves — complete with chain-jump mechanics and win detection.",
+    image: "/works/ai-chinese-checker.png",
+    tags: ["Svelte", "TypeScript", "Tailwind CSS", "Vite", "BunJs"],
+    link: "https://github.com/jumpogpo/ai-chinese-checker",
+  },
+  {
     title: "Science Faculty Maintenance System",
     description:
       "Science Fixit Backend is a maintenance management system for the Faculty of Science at King Mongkut's Institute of Technology Ladkrabang (KMITL). It allows users to report equipment repairs, track request statuses, and efficiently manage user roles.",
